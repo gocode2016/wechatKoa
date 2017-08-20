@@ -1,0 +1,25 @@
+<html>
+    <head></head>
+    <script src="http://cdn.bootcss.com/axios/0.16.2/axios.min.js"></script>
+    <script>
+        obj = {        
+            key: 'b6861e7aa4414a21abf4c72de7bd807c',
+            info: '你是谁',              
+            userid: '123456'
+        }           
+             
+    axios.get('http://www.tuling123.com/openapi/api', {
+    params: obj
+    
+  })
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+    </script>
+<body>
+</body>
+
+</html>
