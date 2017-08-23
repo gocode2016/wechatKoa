@@ -141,7 +141,7 @@ app.use(wechat(config).middleware(async (message,ctx) => {
               return {content: `歌名: ${resID.data.result.songs[0].name} 歌手: ${resID.data.result.songs[0].ar[0].name}\n${lyric.data.lrc.lyric}`,type: 'text'}
             }
           }
-          return {content: `你输入了:${message.Content} 输入类型：${message.MsgType} 事件类型：${message.Event}`,type: 'text'}
+          return {content: `你输入了:${message.Content} 输入类型：${message.MsgType} 事件类型：${message.Event} http://k1r5560136.51mypc.cn/`,type: 'text'}
 }));
 
 

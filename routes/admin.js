@@ -9,11 +9,45 @@ const config = configInfo.test
 router.prefix('/admin')
 
 router.post('/',async (ctx, next) => {
-  
-  const api = new WechatAPI(ctx.request.query.appid, ctx.request.query.appsecret);
+  console.log(ctx.request.body)
+  const api = new WechatAPI(ctx.request.body.appid, ctx.request.body.appsecret);
   let param = {
     debug: true,
-    jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'],
+    jsApiList: ['onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo',
+                'onMenuShareQZone',
+                'startRecord',
+                'stopRecord',
+                'onVoiceRecordEnd',
+                'playVoice',
+                'pauseVoice',
+                'stopVoice',
+                'onVoicePlayEnd',
+                'uploadVoice',
+                'downloadVoice',
+                'chooseImage',
+                'previewImage',
+                'uploadImage',
+                'downloadImage',
+                'translateVoice',
+                'getNetworkType',
+                'openLocation',
+                'getLocation',
+                'hideOptionMenu',
+                'showOptionMenu',
+                'hideMenuItems',
+                'showMenuItems',
+                'hideAllNonBaseMenuItem',
+                'showAllNonBaseMenuItem',
+                'closeWindow',
+                'scanQRCode',
+                'chooseWXPay',
+                'openProductSpecificView',
+                'addCard',
+                'chooseCard',
+                'openCard'],
     url: 'http://k1r5560136.51mypc.cn/'
    };
    
