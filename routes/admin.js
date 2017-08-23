@@ -3,12 +3,14 @@ const WechatAPI = require('co-wechat-api');
 const configInfo = require('../config')
 //开发用配置文件
 const config = configInfo.test
-//api
-const api = new WechatAPI(config.appid, config.appsecret);
+
+
 
 router.prefix('/admin')
 
-router.get('/',async (ctx, next) => {
+router.post('/',async (ctx, next) => {
+  
+  const api = new WechatAPI(ctx.request.query.appid, ctx.request.query.appsecret);
   let param = {
     debug: true,
     jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'],
@@ -18,6 +20,10 @@ router.get('/',async (ctx, next) => {
   let wxConfig = await api.getJsConfig(param)
   ctx.body = wxConfig
 })
+
+
+
+
 
 router.get('/bar', function (ctx, next) {
   ctx.body = 'this is a users/bar response'
